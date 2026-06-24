@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz Dashboard{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Quiz Dashboard</h1>
+<p class="page-subtitle">Welcome to the Quiz Competition App. Manage questions and control the quiz flow.</p>
+
+<div class="row">
+    <!-- Stats Cards -->
+    <div class="col-md-4 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon">
+                <i class="fas fa-question"></i>
+            </div>
+            <div class="stats-info">
+                <h3>{{ questions|length }}</h3>
+                <p>Total Questions</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="stats-info">
+                <h3>{{ teams|length }}</h3>
+                <p>Teams</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="stats-info">
+                <h3>{{ teams|map(attribute='score')|sum }}</h3>
+                <p>Total Points</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Question Management -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-tasks me-2"></i>Question Management
+            </div>
+            <div class="card-body">
+                <p>Add, edit, or delete questions for the quiz.</p>
+                <a href="{{ url_for('manage_questions') }}" class="btn btn-primary">
+                    <i class="fas fa-cog me-2"></i>Manage Questions
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Control -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-play me-2"></i>Quiz Control
+            </div>
+            <div class="card-body">
+                <p>Start the quiz and control the flow.</p>
+                {% if questions %}
+                    <form action="{{ url_for('start_quiz') }}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-success">
+                        <i class="fas fa-play me-2"></i>Start Quiz
+                        </button>
+                    </form>
+                {% else %}
+                    <button class="btn btn-secondary" disabled>
+                        <i class="fas fa-exclamation-circle me-2"></i>No Questions Available
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scoreboard -->
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-trophy me-2"></i>Live Scoreboard
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for team in teams %}
+                    <tr>
+                        <td>
+                            <i class="fas fa-users me-2 text-primary"></i>
+                            {{ team.name }}
+                        </td>
+                        <td>
+                            <span class="badge bg-primary">{{ team.score }} points</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Quiz Controls -->
+<div class="card mt-4">
+    <div class="card-header">
+        <i class="fas fa-cogs me-2"></i>Quiz Controls
+    </div>
+    <div class="card-body">
+        <div class="d-flex gap-3">
+            <form action="{{ url_for('reset') }}" method="post" class="d-inline">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to reset the quiz? This will clear all scores.')">
+                    <i class="fas fa-redo me-2"></i>Reset Quiz
+                </button>
+            </form>
+            <a href="{{ url_for('populate_questions') }}" class="btn btn-primary" onclick="return confirm('This will replace all existing questions with questions from the JSON file. Continue?')">
+                <i class="fas fa-file-import me-2"></i>Load Questions from JSON
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Auto-refresh scoreboard every 5 seconds
+    setInterval(function() {
+        fetch('/api/scoreboard')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('tbody');
+                tbody.innerHTML = data.map(team => `
+                    <tr>
+                        <td>
+                            <i class="fas fa-users me-2 text-primary"></i>
+                            ${team.name}
+                        </td>
+                        <td>
+                            <span class="badge bg-primary">${team.score} points</span>
+                        </td>
+                    </tr>
+                `).join('');
+            });
+    }, 5000);
+</script>
+{% endblock %} 

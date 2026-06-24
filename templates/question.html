@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="mb-0">Question {{ question_number }} of {{ total_questions }}</h4>
+                    <p class="text-muted mb-0">Type: {{ question.type }} | Round: {{ round_name }}</p>
+                </div>
+                <div class="text-end">
+                    <div class="timer-container mb-2">
+                        <span class="badge timer-display" id="countdown">30:00</span>
+                        <span class="timer-label">remaining</span>
+                    </div>
+                    <div>
+                        <span class="badge bg-primary">{{ question.points }} points</span>
+                        <span class="badge bg-info ms-2">{{ current_team }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title mb-4">{{ question.text }}</h5>
+                
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-4">
+                        {% if question.type == 'MultipleChoice' and question.options %}
+                            <p class="text-muted mb-2">Select the correct answer:</p>
+                            <div class="list-group">
+                                {% for option in question.options %}
+                                    <label class="list-group-item list-group-item-action">
+                                        <input class="form-check-input me-3" type="radio" name="answer" value="{{ option }}" required>
+                                        {{ option }}
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        {% elif question.type == 'TrueFalse' %}
+                            <div class="mb-4">
+                                <p class="text-muted mb-2">Select True or False:</p>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check" name="answer" id="true" value="True" autocomplete="off" required>
+                                    <label class="btn btn-outline-primary py-3" for="true">
+                                        <i class="fas fa-check-circle me-2"></i>True
+                                    </label>
+                                    
+                                    <input type="radio" class="btn-check" name="answer" id="false" value="False" autocomplete="off" required>
+                                    <label class="btn btn-outline-primary py-3" for="false">
+                                        <i class="fas fa-times-circle me-2"></i>False
+                                    </label>
+                                </div>
+                            </div>
+                        {% elif question.type == 'OpenEnded' %}
+                            <div class="mb-4">
+                                <p class="text-muted mb-2">Enter your answer:</p>
+                                <div class="form-group">
+                                    <textarea class="form-control form-control-lg" name="answer" rows="4" placeholder="Type your answer here..." required></textarea>
+                                </div>
+                            </div>
+                        {% endif %}
+                        
+                        {% for error in form.answer.errors %}
+                            <div class="text-danger mt-2">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Answer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Scoreboard</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for team in teams %}
+                                <tr {% if team.id == current_team %}class="table-primary"{% endif %}>
+                                    <td>{{ team.name }}</td>
+                                    <td>
+                                        <span class="badge bg-success">{{ team.score }} points</span>
+                                    </td>
+                                    <td>
+                                        {% if team.id == current_team %}
+                                            <span class="badge bg-primary">Current Question</span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">Waiting</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Unique key for this question (use question id or index)
+    const questionKey = 'quiz_timer_end_{{ question.id }}';
+    const duration = {{ timer_seconds|default(180) }}; // Duration in seconds from backend
+    const timerDisplay = document.getElementById('countdown');
+    const form = document.querySelector('form');
+
+    // Get or set end time in localStorage
+    let endTime = localStorage.getItem(questionKey);
+    if (!endTime) {
+        endTime = Date.now() + duration * 1000;
+        localStorage.setItem(questionKey, endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+    // Modal for moderator override (no skip button)
+    const modalHtml = `
+    <div class="modal fade" id="moderatorModal" tabindex="-1" aria-labelledby="moderatorModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="moderatorModalLabel">Time's Up!</h5>
+          </div>
+          <div class="modal-body text-center">
+            <p class="lead">Time has expired for this question.<br>Moderator, please choose an action:</p>
+            <div class="d-grid gap-2 mt-4">
+              <button id="mod-mark-incorrect" class="btn btn-danger">Mark as Incorrect</button>
+              <button id="mod-allow-late" class="btn btn-success">Allow Late Answer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    const moderatorModal = new bootstrap.Modal(document.getElementById('moderatorModal'));
+
+    function updateTimer() {
+        const now = Date.now();
+        const remaining = Math.max(0, endTime - now);
+        const minutes = Math.floor(remaining / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        timerDisplay.className = 'badge timer-display';
+        if (remaining <= 5 * 60 * 1000) {
+            timerDisplay.classList.add('bg-danger');
+        } else if (remaining <= 10 * 60 * 1000) {
+            timerDisplay.classList.add('bg-warning');
+        } else {
+            timerDisplay.classList.add('bg-success');
+        }
+        if (remaining <= 0) {
+            clearInterval(timerInterval);
+            localStorage.removeItem(questionKey);
+            // Disable all form inputs
+            Array.from(form.elements).forEach(el => el.disabled = true);
+            timerDisplay.textContent = "0:00";
+            timerDisplay.classList.remove('bg-success', 'bg-warning');
+            timerDisplay.classList.add('bg-danger');
+            // Show moderator modal
+            setTimeout(() => moderatorModal.show(), 300);
+        }
+    }
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    // Moderator actions
+    document.addEventListener('shown.bs.modal', function (event) {
+        if (event.target.id === 'moderatorModal') {
+            document.getElementById('mod-mark-incorrect').onclick = function() {
+                // Mark as incorrect: submit with a hidden field
+                let hidden = document.createElement('input');
+                hidden.type = 'hidden';
+                hidden.name = 'mod_action';
+                hidden.value = 'incorrect';
+                form.appendChild(hidden);
+                form.submit();
+            };
+            document.getElementById('mod-allow-late').onclick = function() {
+                // Allow late: enable form inputs and hide modal
+                Array.from(form.elements).forEach(el => el.disabled = false);
+                moderatorModal.hide();
+            };
+        }
+    });
+
+    // If user submits manually, clear the timer for this question
+    form.addEventListener('submit', function() {
+        localStorage.removeItem(questionKey);
+    });
+
+    // Auto-refresh scoreboard every 5 seconds
+    setInterval(function() {
+        fetch('/api/scoreboard')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('tbody');
+                tbody.innerHTML = data.map(team => `
+                    <tr ${team.id === '{{ current_team }}' ? 'class=\"table-primary\"' : ''}>
+                        <td>${team.name}</td>
+                        <td>
+                            <span class="badge bg-success">${team.score} points</span>
+                        </td>
+                        <td>
+                            ${team.id === '{{ current_team }}' 
+                                ? '<span class="badge bg-primary">Current Question</span>' 
+                                : '<span class="badge bg-secondary">Waiting</span>'}
+                        </td>
+                    </tr>
+                `).join('');
+            });
+    }, 5000);
+});
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.timer-display {
+    font-size: 2rem;
+    font-family: 'Roboto Mono', 'Consolas', monospace;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    letter-spacing: 0.05em;
+    transition: background 0.3s, color 0.3s;
+}
+.timer-label {
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+</style>
+{% endblock %} 

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h4>Quiz Results</h4>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <h2>Winner: {{ winning_team.name }}</h2>
+                    <p class="lead">Congratulations to the winning team!</p>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for team in teams %}
+                                <tr {% if team.id == winning_team.id %}class="table-success"{% endif %}>
+                                    <td>{{ team.name }}</td>
+                                    <td>{{ team.score }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Quiz Statistics</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Total Questions
+                            <span class="badge bg-primary rounded-pill">{{ total_questions }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Correct Answers
+                            <span class="badge bg-success rounded-pill">{{ correct_answers }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Accuracy
+                            <span class="badge bg-info rounded-pill">
+                                {% if total_questions > 0 %}
+                                    {{ (correct_answers / total_questions * 100) | round(1) }}%
+                                {% else %}
+                                    0%
+                                {% endif %}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="d-grid gap-2 mt-4">
+                    <form action="{{ url_for('reset') }}" method="POST">
+                        <button type="submit" class="btn btn-primary">Start New Quiz</button>
+                    </form>
+                    <a href="{{ url_for('quiz_dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

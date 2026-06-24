@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>Add New Question</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        {{ form.text.label(class="form-label") }}
+                        {{ form.text(class="form-control", rows=3) }}
+                        {% for error in form.text.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.type.label(class="form-label") }}
+                        {{ form.type(class="form-select") }}
+                        {% for error in form.type.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3" id="options-field" style="display: none;">
+                        {{ form.options.label(class="form-label") }}
+                        {{ form.options(class="form-control") }}
+                        <small class="form-text text-muted">Enter options separated by commas (e.g., Option 1, Option 2, Option 3)</small>
+                        {% for error in form.options.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.correct.label(class="form-label") }}
+                        {{ form.correct(class="form-control") }}
+                        {% for error in form.correct.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.assigned_to.label(class="form-label") }}
+                        {{ form.assigned_to(class="form-select") }}
+                        {% for error in form.assigned_to.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.points.label(class="form-label") }}
+                        {{ form.points(class="form-control") }}
+                        {% for error in form.points.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="d-grid gap-2">
+                        {{ form.submit(class="btn btn-primary") }}
+                        <a href="{{ url_for('manage_questions') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const typeSelect = document.getElementById('type');
+        const optionsField = document.getElementById('options-field');
+        
+        function toggleOptionsField() {
+            if (typeSelect.value === 'MultipleChoice') {
+                optionsField.style.display = 'block';
+            } else {
+                optionsField.style.display = 'none';
+            }
+        }
+        
+        typeSelect.addEventListener('change', toggleOptionsField);
+        toggleOptionsField(); // Initial state
+    });
+</script>
+{% endblock %} 

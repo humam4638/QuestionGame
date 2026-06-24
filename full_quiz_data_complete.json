@@ -1,0 +1,1245 @@
+{
+  "Lecture 1": {
+    "Multiple Choice": [
+      {
+        "question": "Which operation of the information-processing cycle converts raw data into meaningful information?",
+        "options": [
+          "Input",
+          "Processing",
+          "Output",
+          "Storage"
+        ],
+        "answer": "Processing"
+      },
+      {
+        "question": "The motherboard is best described as:",
+        "options": [
+          "A removable storage device",
+          "A circuit board that connects the CPU to other components",
+          "Software that manages hardware resources",
+          "A portable version of a desktop system"
+        ],
+        "answer": "A circuit board that connects the CPU to other components"
+      },
+      {
+        "question": "Which of the following first appeared in 1990 and paved the way for the modern Internet?",
+        "options": [
+          "ENIAC",
+          "HTML/World Wide Web",
+          "Windows 95",
+          "Google Android"
+        ],
+        "answer": "HTML/World Wide Web"
+      },
+      {
+        "question": "Minicomputers (also called mid-range servers) are primarily designed to serve the needs of:",
+        "options": [
+          "Single home users",
+          "Government supercomputing centers",
+          "Smaller companies or businesses",
+          "Mobile professionals on the go"
+        ],
+        "answer": "Smaller companies or businesses"
+      },
+      {
+        "question": "Which wireless device category combines PDA capabilities with mobile-phone functionality?",
+        "options": [
+          "Netbook",
+          "Smartphone",
+          "Tablet PC",
+          "Sub-notebook"
+        ],
+        "answer": "Smartphone"
+      },
+      {
+        "question": "A client/server network is characterized by:",
+        "options": [
+          "Peer-to-peer connections only",
+          "Centralized servers providing resources to client computers",
+          "No dedicated networking hardware",
+          "Direct cable links between every pair of computers"
+        ],
+        "answer": "Centralized servers providing resources to client computers"
+      },
+      {
+        "question": "Which emerging technology is expected to create new immersive experiences in training and remote collaboration?",
+        "options": [
+          "Quantum computing",
+          "5G",
+          "AR/VR",
+          "Dial-up Internet"
+        ],
+        "answer": "AR/VR"
+      },
+      {
+        "question": "What is the first operation in the information-processing cycle?",
+        "options": [
+          "Output",
+          "Storage",
+          "Input",
+          "Processing"
+        ],
+        "answer": "Input"
+      },
+      {
+        "question": "ENIAC, unveiled in 1946, was significant because it:",
+        "options": [
+          "Introduced the graphical user interface",
+          "Increased computing speed by roughly 1,000× previous rates",
+          "Was the first handheld calculator",
+          "Launched commercial e-mail"
+        ],
+        "answer": "Increased computing speed by roughly 1,000× previous rates"
+      },
+      {
+        "question": "Which of the following is NOT listed as a best practice to promote ergonomic safety at a computer workstation?",
+        "options": [
+          "Positioning the monitor's top at eye level",
+          "Tilting the monitor back 10–20 degrees",
+          "Keeping the screen within 10 cm of the eyes",
+          "Resting the eyes periodically by focusing on a distant object"
+        ],
+        "answer": "Keeping the screen within 10 cm of the eyes"
+      }
+    ],
+    "True or False Set 1": [
+      {
+        "statement": "Information Technology (IT) refers exclusively to computer hardware.",
+        "answer": false
+      },
+      {
+        "statement": "Random-access memory (RAM) temporarily stores programs and data needed by the CPU.",
+        "answer": true
+      },
+      {
+        "statement": "Supercomputers are primarily designed for a single home user's everyday tasks.",
+        "answer": false
+      },
+      {
+        "statement": "The rollout of 5G networks began in the early 2020s, enabling faster wireless communication.",
+        "answer": true
+      },
+      {
+        "statement": "Digital piracy is an example of unethical behavior discussed under computer ethics.",
+        "answer": true
+      },
+      {
+        "statement": "A surge protector is recommended to help safeguard computer hardware from electrical damage.",
+        "answer": true
+      },
+      {
+        "statement": "Before computers, people routinely stored large numeric datasets in electronic spreadsheets.",
+        "answer": false
+      },
+      {
+        "statement": "Google Docs is cited as an example of collaborative Web-based software.",
+        "answer": true
+      }
+    ]
+  },
+  "Lecture 2": {
+    "Multiple Choice": [
+      {
+        "question": "What is the smallest piece of data a computer can work with?",
+        "options": [
+          "Byte",
+          "Bit",
+          "Nibble",
+          "Hex"
+        ],
+        "answer": "Bit"
+      },
+      {
+        "question": "Which code is used to convert characters into numbers the computer can understand?",
+        "options": [
+          "BIOS",
+          "ASCII",
+          "CMOS",
+          "USB"
+        ],
+        "answer": "ASCII"
+      },
+      {
+        "question": "What is the function of the ALU in the CPU?",
+        "options": [
+          "Retrieve instructions",
+          "Perform logical and arithmetic operations",
+          "Store data permanently",
+          "Control the motherboard"
+        ],
+        "answer": "Perform logical and arithmetic operations"
+      },
+      {
+        "question": "What is the purpose of cache memory?",
+        "options": [
+          "Store the operating system permanently",
+          "Store power supply settings",
+          "Store frequently used instructions for fast access",
+          "Connect peripherals"
+        ],
+        "answer": "Store frequently used instructions for fast access"
+      },
+      {
+        "question": "Which memory type is volatile and loses contents when power is off?",
+        "options": [
+          "ROM",
+          "CMOS",
+          "RAM",
+          "Cache"
+        ],
+        "answer": "RAM"
+      },
+      {
+        "question": "What does the 'fetch' step in the instruction cycle do?",
+        "options": [
+          "Store the result",
+          "Perform logical comparison",
+          "Retrieve the instruction from memory",
+          "Decode the instruction"
+        ],
+        "answer": "Retrieve the instruction from memory"
+      },
+      {
+        "question": "Which of the following is an example of a legacy port?",
+        "options": [
+          "USB",
+          "FireWire",
+          "PS/2",
+          "HDMI"
+        ],
+        "answer": "PS/2"
+      },
+      {
+        "question": "What allows USB devices to be connected or removed without shutting down the computer?",
+        "options": [
+          "BIOS",
+          "Hot swapping",
+          "Hexadecimal code",
+          "CMOS"
+        ],
+        "answer": "Hot swapping"
+      },
+      {
+        "question": "Which CPU architecture allows processing multiple instructions per clock cycle?",
+        "options": [
+          "Superscalar",
+          "Scalar",
+          "CMOS",
+          "BIOS"
+        ],
+        "answer": "Superscalar"
+      },
+      {
+        "question": "What is the function of the system clock in a computer?",
+        "options": [
+          "Save the BIOS",
+          "Store data",
+          "Synchronize internal activities",
+          "Display time"
+        ],
+        "answer": "Synchronize internal activities"
+      }
+    ],
+    "True or False": [
+      {
+        "statement": "A byte consists of eight bits.",
+        "answer": true
+      },
+      {
+        "statement": "RAM retains its data even when the computer is turned off.",
+        "answer": false
+      },
+      {
+        "statement": "The BIOS is stored in ROM.",
+        "answer": true
+      },
+      {
+        "statement": "FireWire allows for high-speed connections and hot swapping.",
+        "answer": true
+      },
+      {
+        "statement": "The control unit in the CPU performs arithmetic calculations.",
+        "answer": false
+      },
+      {
+        "statement": "A USB port can connect more than 100 peripheral devices.",
+        "answer": true
+      },
+      {
+        "statement": "Superscalar architecture reduces the size of RAM.",
+        "answer": false
+      },
+      {
+        "statement": "Pipelining allows multiple instructions to be processed simultaneously in different stages.",
+        "answer": true
+      }
+    ]
+  },
+  "Lecture 3": {
+    "Multiple Choice": [
+      {
+        "question": "What are the two main categories of system software?",
+        "options": [
+          "Operating system and application software",
+          "Operating system and system utilities",
+          "Kernel and drivers",
+          "User interface and utilities"
+        ],
+        "answer": "Operating system and system utilities"
+      },
+      {
+        "question": "Which function is NOT one of the five basic functions of an operating system?",
+        "options": [
+          "Manages memory",
+          "Formats hard drive",
+          "Manages applications",
+          "Starts the computer"
+        ],
+        "answer": "Formats hard drive"
+      },
+      {
+        "question": "What is the difference between a cold boot and a warm boot?",
+        "options": [
+          "Cold boot uses less memory",
+          "Cold boot restarts the system while it's running",
+          "Warm boot is starting the system for the first time",
+          "Cold boot is starting a system that's off"
+        ],
+        "answer": "Cold boot is starting a system that's off"
+      },
+      {
+        "question": "What is the kernel responsible for?",
+        "options": [
+          "Formatting storage devices",
+          "Handling GUI appearance",
+          "Mediating access to system resources",
+          "Running antivirus software"
+        ],
+        "answer": "Mediating access to system resources"
+      },
+      {
+        "question": "Which of the following is a type of user interface that uses icons?",
+        "options": [
+          "Command-line",
+          "Menu-driven",
+          "Graphical user interface (GUI)",
+          "Text-based interface"
+        ],
+        "answer": "Graphical user interface (GUI)"
+      },
+      {
+        "question": "Which operating system is based on UNIX?",
+        "options": [
+          "Windows",
+          "Linux",
+          "Mac OS X",
+          "Android"
+        ],
+        "answer": "Mac OS X"
+      },
+      {
+        "question": "What makes Linux 'open source'?",
+        "options": [
+          "It has a built-in GUI",
+          "It is available only to corporations",
+          "The source code is available to users",
+          "It is developed by Microsoft"
+        ],
+        "answer": "The source code is available to users"
+      },
+      {
+        "question": "Which OS type is found on ROM chips in devices like PDAs or appliances?",
+        "options": [
+          "Server OS",
+          "Stand-alone OS",
+          "Embedded OS",
+          "Virtual OS"
+        ],
+        "answer": "Embedded OS"
+      },
+      {
+        "question": "Which platform is considered to have more available software?",
+        "options": [
+          "Linux",
+          "Mac",
+          "PC",
+          "Android"
+        ],
+        "answer": "PC"
+      },
+      {
+        "question": "What does the term 'platform' refer to in computing?",
+        "options": [
+          "The computer screen type",
+          "The size of the system unit",
+          "The combination of OS and microprocessor",
+          "The external device connectors"
+        ],
+        "answer": "The combination of OS and microprocessor"
+      }
+    ],
+    "True or False": [
+      {
+        "statement": "The operating system handles communication between hardware and software.",
+        "answer": true
+      },
+      {
+        "statement": "A warm boot occurs when starting a computer that was previously off.",
+        "answer": false
+      },
+      {
+        "statement": "The kernel is the part of the OS that manages resource access.",
+        "answer": true
+      },
+      {
+        "statement": "Menu-driven interfaces require users to memorize complex syntax.",
+        "answer": false
+      },
+      {
+        "statement": "Linux was created by Linus Torvalds and is open-source.",
+        "answer": true
+      },
+      {
+        "statement": "GUI interfaces only display text-based menus.",
+        "answer": false
+      },
+      {
+        "statement": "Embedded operating systems are used in industrial robots and appliances.",
+        "answer": true
+      },
+      {
+        "statement": "Mac OS X is based on the Windows operating system.",
+        "answer": false
+      }
+    ]
+  },
+  "Lecture 4": {
+    "Multiple Choice": [
+      {
+        "question": "Which of the following networks is designed for use in a single city?",
+        "options": [
+          "LAN",
+          "WAN",
+          "MAN",
+          "PAN"
+        ],
+        "answer": "MAN"
+      },
+      {
+        "question": "What device connects two or more networks and determines the best path to transmit data?",
+        "options": [
+          "Hub",
+          "Switch",
+          "NIC",
+          "Router"
+        ],
+        "answer": "Router"
+      },
+      {
+        "question": "Which type of network typically covers an individual's personal devices within 32 feet?",
+        "options": [
+          "WAN",
+          "CAN",
+          "PAN",
+          "MAN"
+        ],
+        "answer": "PAN"
+      },
+      {
+        "question": "What is a node in a network?",
+        "options": [
+          "A type of router",
+          "A network cable",
+          "Any device connected to a network",
+          "A type of switch"
+        ],
+        "answer": "Any device connected to a network"
+      },
+      {
+        "question": "Which network device joins multiple computers but does not manage traffic?",
+        "options": [
+          "Router",
+          "Switch",
+          "Hub",
+          "Access Point"
+        ],
+        "answer": "Hub"
+      },
+      {
+        "question": "What does a network interface card (NIC) do?",
+        "options": [
+          "Connects networks together",
+          "Filters data packets",
+          "Provides a connection between a computer and the network",
+          "Controls radio signals"
+        ],
+        "answer": "Provides a connection between a computer and the network"
+      },
+      {
+        "question": "What is the role of a network administrator?",
+        "options": [
+          "Connects routers",
+          "Writes software only",
+          "Maintains and secures the network",
+          "Manufactures NICs"
+        ],
+        "answer": "Maintains and secures the network"
+      },
+      {
+        "question": "Which device receives and transmits radio signals to connect wireless nodes to a wired network?",
+        "options": [
+          "Switch",
+          "Router",
+          "Access Point",
+          "Hub"
+        ],
+        "answer": "Access Point"
+      },
+      {
+        "question": "Which is considered the largest Wide Area Network (WAN)?",
+        "options": [
+          "Bluetooth",
+          "Local Ethernet",
+          "Intranet",
+          "The Internet"
+        ],
+        "answer": "The Internet"
+      },
+      {
+        "question": "What is a CAN network used for?",
+        "options": [
+          "Personal home use",
+          "Connecting devices across the globe",
+          "Connecting LANs across a campus",
+          "Wireless gaming"
+        ],
+        "answer": "Connecting LANs across a campus"
+      }
+    ],
+    "True or False": [
+      {
+        "statement": "LANs connect computers within a limited geographic area such as an office.",
+        "answer": true
+      },
+      {
+        "statement": "A hub can filter and forward data like a switch.",
+        "answer": false
+      },
+      {
+        "statement": "A PAN is typically established using wireless technologies.",
+        "answer": true
+      },
+      {
+        "statement": "Switches connect different networks and inspect data sources.",
+        "answer": false
+      },
+      {
+        "statement": "Network administrators are responsible for network security and support.",
+        "answer": true
+      },
+      {
+        "statement": "Wireless access points are only used in wired networks.",
+        "answer": false
+      },
+      {
+        "statement": "The Internet is the world's largest example of a WAN.",
+        "answer": true
+      },
+      {
+        "statement": "NIC stands for Network Internet Card.",
+        "answer": false
+      }
+    ]
+  },
+  "Lecture 5": {
+    "Multiple Choice": [
+      {
+        "question": "Which topology is commonly used in home or small office networks?",
+        "options": [
+          "Star",
+          "Bus",
+          "Ring",
+          "Mesh"
+        ],
+        "answer": "Bus"
+      },
+      {
+        "question": "What does a switch do in a network?",
+        "options": [
+          "Manages multiple routers",
+          "Filters and forwards data between nodes",
+          "Transmits only wireless signals",
+          "Encrypts data packets"
+        ],
+        "answer": "Filters and forwards data between nodes"
+      },
+      {
+        "question": "Which LAN topology uses a token for data transmission?",
+        "options": [
+          "Ring",
+          "Star",
+          "Bus",
+          "Mesh"
+        ],
+        "answer": "Ring"
+      },
+      {
+        "question": "What is a major advantage of packet switching over circuit switching?",
+        "options": [
+          "It is slower",
+          "It uses fixed paths",
+          "It is more efficient and less expensive",
+          "It is only used in phone calls"
+        ],
+        "answer": "It is more efficient and less expensive"
+      },
+      {
+        "question": "What is the role of a file server in a network?",
+        "options": [
+          "Provides internet access",
+          "Runs antivirus software",
+          "Provides programs and data files to users",
+          "Connects wireless access points"
+        ],
+        "answer": "Provides programs and data files to users"
+      },
+      {
+        "question": "Which LAN protocol is the most commonly used?",
+        "options": [
+          "WiFi",
+          "TCP/IP",
+          "Ethernet",
+          "Token Ring"
+        ],
+        "answer": "Ethernet"
+      },
+      {
+        "question": "What type of network is typically used to connect devices across an entire campus?",
+        "options": [
+          "MAN",
+          "LAN",
+          "CAN",
+          "WAN"
+        ],
+        "answer": "CAN"
+      },
+      {
+        "question": "Which protocol suite is used on the Internet for communication?",
+        "options": [
+          "WiFi",
+          "HTTP/HTTPS",
+          "TCP/IP",
+          "POP/SMTP"
+        ],
+        "answer": "TCP/IP"
+      },
+      {
+        "question": "What causes latency in packet-switched networks?",
+        "options": [
+          "Number of switches",
+          "Speed of transmission",
+          "Processing at routers",
+          "Size of cables"
+        ],
+        "answer": "Processing at routers"
+      },
+      {
+        "question": "What is the purpose of a wireless access point (WAP)?",
+        "options": [
+          "Store data",
+          "Print wirelessly",
+          "Join wireless nodes to a wired network",
+          "Filter firewall traffic"
+        ],
+        "answer": "Join wireless nodes to a wired network"
+      }
+    ],
+    "True or False": [
+      {
+        "statement": "A hub manages traffic between network devices.",
+        "answer": false
+      },
+      {
+        "statement": "A bus topology allows one node to transmit at a time.",
+        "answer": true
+      },
+      {
+        "statement": "WiFi is a wireless LAN technology that operates at Ethernet speeds.",
+        "answer": true
+      },
+      {
+        "statement": "Intranet is a public network accessible by anyone.",
+        "answer": false
+      },
+      {
+        "statement": "Circuit switching creates a dedicated end-to-end path.",
+        "answer": true
+      },
+      {
+        "statement": "File servers contain the network operating system (NOS).",
+        "answer": true
+      },
+      {
+        "statement": "Latency in packet switching is caused by slow cables.",
+        "answer": false
+      },
+      {
+        "statement": "A home network can use both wired and wireless connections.",
+        "answer": true
+      }
+    ]
+  },
+  "C++ Quiz": {
+    "Multiple Choice": [
+      {
+        "question": "What is the correct type to store whole numbers in C++?",
+        "options": [
+          "float",
+          "int",
+          "char",
+          "string"
+        ],
+        "answer": "int"
+      },
+      {
+        "question": "Which type is used to store true or false values?",
+        "options": [
+          "char",
+          "bool",
+          "float",
+          "int"
+        ],
+        "answer": "bool"
+      },
+      {
+        "question": "What does cout do?",
+        "options": [
+          "Reads input",
+          "Outputs data",
+          "Declares variables",
+          "Ends program"
+        ],
+        "answer": "Outputs data"
+      },
+      {
+        "question": "What is the use of cin in C++?",
+        "options": [
+          "Input",
+          "Output",
+          "Condition",
+          "Function"
+        ],
+        "answer": "Input"
+      },
+      {
+        "question": "How do you declare an integer variable named age?",
+        "options": [
+          "int age;",
+          "integer age;",
+          "float age;",
+          "num age;"
+        ],
+        "answer": "int age;"
+      },
+      {
+        "question": "What will this output: cout << \"Hi\";?",
+        "options": [
+          "Hi",
+          "\"Hi\"",
+          "Nothing",
+          "Error"
+        ],
+        "answer": "Hi"
+      },
+      {
+        "question": "What is the value of x after this: int x = 3; x++;",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "4"
+      },
+      {
+        "question": "Which of the following is a valid array declaration with 4 elements?",
+        "options": [
+          "int arr;",
+          "int arr(4);",
+          "int arr[4];",
+          "array arr[4];"
+        ],
+        "answer": "int arr[4];"
+      },
+      {
+        "question": "What is the result of 7 % 3?",
+        "options": [
+          "2",
+          "1",
+          "3",
+          "0"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "Which of these is a correct if condition?",
+        "options": [
+          "if x = 5",
+          "if (x == 5)",
+          "if x == 5:",
+          "if == 5 x"
+        ],
+        "answer": "if (x == 5)"
+      },
+      {
+        "question": "What does --y do?",
+        "options": [
+          "Increases y",
+          "Decreases y",
+          "Multiplies y",
+          "No effect"
+        ],
+        "answer": "Decreases y"
+      },
+      {
+        "question": "Which operator adds a number to a variable and stores it back?",
+        "options": [
+          "+",
+          "++",
+          "+=",
+          "="
+        ],
+        "answer": "+="
+      },
+      {
+        "question": "What is the output of this code? int a = 5; cout << ++a;",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "Error"
+        ],
+        "answer": "6"
+      },
+      {
+        "question": "What does this loop do? for (int i = 0; i < 3; i++) { cout << i; }",
+        "options": [
+          "Prints 0 1 2",
+          "Prints 1 2 3",
+          "Prints 0 1 2 3",
+          "Infinite loop"
+        ],
+        "answer": "Prints 0 1 2"
+      },
+      {
+        "question": "What is the value of x after: int x = 8; x -= 3;",
+        "options": [
+          "5",
+          "11",
+          "3",
+          "8"
+        ],
+        "answer": "5"
+      },
+      {
+        "question": "How do you access the last element in an array arr[5]?",
+        "options": [
+          "arr[5]",
+          "arr[4]",
+          "arr[0]",
+          "arr[-1]"
+        ],
+        "answer": "arr[4]"
+      },
+      {
+        "question": "Which data type is most suitable for storing 3.14?",
+        "options": [
+          "int",
+          "bool",
+          "float",
+          "char"
+        ],
+        "answer": "float"
+      },
+      {
+        "question": "What does this statement do? x = x + 2;",
+        "options": [
+          "Increases x by 2",
+          "Divides x by 2",
+          "Makes x = 2",
+          "Subtracts 2 from x"
+        ],
+        "answer": "Increases x by 2"
+      },
+      {
+        "question": "Which of the following declares an array and sets the first element to 10?",
+        "options": [
+          "int arr[3] = {10, 0, 0};",
+          "int arr[3] = 10;",
+          "arr = {10, 0, 0};",
+          "array arr = {10};"
+        ],
+        "answer": "int arr[3] = {10, 0, 0};"
+      },
+      {
+        "question": "What is the output of: int x = 10; cout << x++ << x;",
+        "options": [
+          "1010",
+          "1110",
+          "1011",
+          "1111"
+        ],
+        "answer": "1011"
+      },
+      {
+        "question": "Which for loop will print numbers from 5 to 1?",
+        "options": [
+          "for (int i = 1; i <= 5; i++)",
+          "for (int i = 5; i > 0; i--)",
+          "for (int i = 5; i < 1; i--)",
+          "for (int i = 0; i < 5; i--)"
+        ],
+        "answer": "for (int i = 5; i > 0; i--)"
+      },
+      {
+        "question": "Which of the following is NOT a valid variable name?",
+        "options": [
+          "_age",
+          "2value",
+          "value2",
+          "user_name"
+        ],
+        "answer": "2value"
+      },
+      {
+        "question": "What is the correct syntax to declare a float variable and initialize it with 5.7?",
+        "options": [
+          "int x = 5.7;",
+          "float x = 5.7;",
+          "double x = \"5.7\";",
+          "float x = '5.7';"
+        ],
+        "answer": "float x = 5.7;"
+      },
+      {
+        "question": "Which of these arrays will cause an error?",
+        "options": [
+          "int arr[3] = {1, 2, 3};",
+          "int arr[2] = {1, 2, 3};",
+          "int arr[3] = {1};",
+          "int arr[3];"
+        ],
+        "answer": "int arr[2] = {1, 2, 3};"
+      },
+      {
+        "question": "What will be printed? int arr[3] = {2, 4, 6}; cout << arr[1] + arr[2];",
+        "options": [
+          "6",
+          "8",
+          "10",
+          "12"
+        ],
+        "answer": "10"
+      }
+    ]
+  },
+  "Arabic Section": {
+    "True or False Set 1": [
+      {
+        "statement": "الجيل الأول من الحواسيب استخدم الترانزستورات كوحدة أساسية للمعالجة.",
+        "answer": false
+      },
+      {
+        "statement": "أجهزة الجيل الرابع من الحاسوب ساهمت في ظهور وانتشار الحواسيب الشخصية.",
+        "answer": true
+      },
+      {
+        "statement": "الجيل الثالث من الحواسيب دعم فقط لغة الآلة واللغة التجميعية.",
+        "answer": false
+      },
+      {
+        "statement": "الجيل الثاني من الحواسيب تميز بأنه أكثر موثوقية وأقل استهلاكاً للكهرباء من الجيل الأول.",
+        "answer": true
+      },
+      {
+        "statement": "في الجيل الخامس من الحواسيب، بدأ استخدام الذكاء الاصطناعي ومعالجة اللغة الطبيعية.",
+        "answer": true
+      }
+    ],
+    "True or False Set 2": [
+      {
+        "statement": "يمكن للكمبيوتر تنفيذ المهام تلقائياً دون الحاجة إلى تعليمات بشرية مبرمجة مسبقاً.",
+        "answer": false
+      },
+      {
+        "statement": "الفرق الأساسي بين RAM وذاكرة التخزين هو أن الأولى تُستخدم للمعالجة والثانية للحفظ الدائم.",
+        "answer": true
+      },
+      {
+        "statement": "الحاسوب يمكنه اتخاذ قرارات مبنية على مشاعره وخبراته السابقة.",
+        "answer": false
+      },
+      {
+        "statement": "الميزة الحاسوبية المسماة 'الدقة' تتوقف فقط على مدى صحة إدخال البيانات.",
+        "answer": true
+      },
+      {
+        "statement": "الميزة التي تظهر قدرة الحاسوب على أداء أعمال متنوعة في وقت واحد تعُرف بالـ 'دقة'.",
+        "answer": false
+      }
+    ],
+    "Multiple Choice Set 1": [
+      {
+        "question": "ما التقنية المستخدمة في تصنيع الحواسيب من الجيل الثالث؟",
+        "options": [
+          "الصمامات المفرغة",
+          "الدوائر المتكاملة",
+          "الترانزستورات",
+          "المعالجات فائقة السرعة"
+        ],
+        "answer": "الدوائر المتكاملة"
+      },
+      {
+        "question": "أي من اللغات التالية كانت تُستخدم في الجيل الثاني من الحواسيب؟",
+        "options": [
+          "Java",
+          "Python",
+          "COBOL",
+          "Ruby"
+        ],
+        "answer": "COBOL"
+      },
+      {
+        "question": "ما الذي ميزّ الجيل الخامس من الحواسيب مقارنة بالأجيال السابقة؟",
+        "options": [
+          "دعم لغات منخفضة المستوى فقط",
+          "استخدام الشرائح المغناطيسية",
+          "الذكاء الاصطناعي والمعالجة المتوازية",
+          "عدم الحاجة إلى الكهرباء"
+        ],
+        "answer": "الذكاء الاصطناعي والمعالجة المتوازية"
+      },
+      {
+        "question": "ما نوع نظام التشغيل الذي كان شائعاً في الجيل الأول من الحواسيب؟",
+        "options": [
+          "النظام الفوري",
+          "النظام الشبكي",
+          "Batch processing (نظام الدُفعات)",
+          "نظام رسومي"
+        ],
+        "answer": "Batch processing (نظام الدُفعات)"
+      },
+      {
+        "question": "في أي جيل ظهر مفهوم 'الإنترنت' للمرة الأولى؟",
+        "options": [
+          "الأول",
+          "الثاني",
+          "الرابع",
+          "الخامس"
+        ],
+        "answer": "الرابع"
+      }
+    ],
+    "Multiple Choice Set 2": [
+      {
+        "question": "ما الذي يجعل الحاسوب مختلفاً عن الإنسان في أداء المهام المتكررة؟",
+        "options": [
+          "القدرة على التفكير",
+          "الشعور بالتعب",
+          "الدقة العالية",
+          "العمل بدون ملل"
+        ],
+        "answer": "العمل بدون ملل"
+      },
+      {
+        "question": "أي من المزايا التالية يساهم في تقليل استخدام الورق داخل المؤسسات؟",
+        "options": [
+          "التخزين المؤقت",
+          "التشغيل الآلي",
+          "القدرة على التخزين الدائم",
+          "الدقة"
+        ],
+        "answer": "التشغيل الآلي"
+      },
+      {
+        "question": "في أي حالة تعد دقة الحاسوب غير مضمونة؟",
+        "options": [
+          "عند العمل في بيئة غبارية",
+          "عند تنفيذ عمليات حسابية طويلة",
+          "عند إدخال بيانات خاطئة",
+          "عند فقدان الاتصال بالإنترنت"
+        ],
+        "answer": "عند إدخال بيانات خاطئة"
+      },
+      {
+        "question": "أي من التالي لا يعد من مزايا الحاسوب؟",
+        "options": [
+          "العمل بدون كلل",
+          "التفكير النقدي",
+          "السرعة الفائقة",
+          "التخزين الكبير"
+        ],
+        "answer": "التفكير النقدي"
+      },
+      {
+        "question": "في الحاسوب، 'التشغيل الآلي' الذي يميز ما؟",
+        "options": [
+          "الاعتماد على الحواس",
+          "الحاجة المستمرة لتدخل الإنسان",
+          "تنفيذ التعليمات تلقائياً",
+          "القدرة على تعديل البرامج ذاتياً"
+        ],
+        "answer": "تنفيذ التعليمات تلقائياً"
+      }
+    ],
+    "Conversion Questions": [
+      {
+        "question": "في النظام العشري، 1101 ما قيمة العدد الثنائي؟",
+        "options": [
+          "11",
+          "12",
+          "13",
+          "14"
+        ],
+        "answer": "13"
+      },
+      {
+        "question": "ما الناتج العشري للعدد الثماني 25؟",
+        "options": [
+          "20",
+          "21",
+          "22",
+          "25"
+        ],
+        "answer": "21"
+      },
+      {
+        "question": "في النظام العشري، ما قيمة الحرف D ضمن النظام الست عشري؟",
+        "options": [
+          "11",
+          "12",
+          "13",
+          "14"
+        ],
+        "answer": "13"
+      }
+    ],
+    "Open Ended Questions": {
+      "أسئلة عن الأجهزة والموبايلات الحديثة": [
+        {
+          "رقم": 1,
+          "سؤال": "ما اسم الهاتف الذي أطلقته سامسونج في 2024 ويُعتبر من أقوى هواتف الأندرويد؟",
+          "جواب": "غالاكسي"
+        },
+        {
+          "رقم": 2,
+          "سؤال": "ما اسم الهاتف الذي أطلقته آبل في 2023 ويتميز بمستشعرات كاميرا متقدمة؟",
+          "جواب": "آيفون"
+        },
+        {
+          "رقم": 3,
+          "سؤال": "ما اسم الهاتف القابل للطي الذي أطلقته سامسونج في 2021؟",
+          "جواب": "فولد"
+        },
+        {
+          "رقم": 4,
+          "سؤال": "ما اسم الشركة التي تطور سلسلة هواتف بيكسل؟",
+          "جواب": "جوجل"
+        },
+        {
+          "رقم": 5,
+          "سؤال": "ما اسم الهاتف الذي أطلقته جوجل في 2023 ويتميز بدعم طويل للتحديثات؟",
+          "جواب": "بيكسل"
+        },
+        {
+          "رقم": 6,
+          "سؤال": "ما اسم الهاتف الذي أطلقته آبل في 2024 ويتميز بإطار من التيتانيوم؟",
+          "جواب": "آيفون"
+        },
+        {
+          "رقم": 7,
+          "سؤال": "ما اسم الهاتف الذي أطلقته سامسونج في 2023 ويتميز بكاميرا بدقة 200 ميجابكسل؟",
+          "جواب": "ألترا"
+        },
+        {
+          "رقم": 8,
+          "سؤال": "ما اسم الهاتف الذي أطلقته جوجل في 2022 ويتميز بتقنية الذكاء الاصطناعي؟",
+          "جواب": "بيكسل"
+        },
+        {
+          "رقم": 9,
+          "سؤال": "ما اسم الهاتف الذي أطلقته آبل في 2022 ويتميز بشاشة OLED؟",
+          "جواب": "آيفون"
+        },
+        {
+          "رقم": 10,
+          "سؤال": "ما اسم الهاتف الذي أطلقته سامسونج في 2022 ويتميز بتقنية الشحن السريع؟",
+          "جواب": "غالاكسي"
+        }
+      ],
+      "أسئلة عن التكنولوجيا الحديثة": [
+        {
+          "رقم": 11,
+          "سؤال": "ما اسم التقنية التي تُستخدم لتوفير سرعات إنترنت عالية في الهواتف الحديثة؟",
+          "جواب": "5G"
+        }
+      ],
+      "أسئلة عن الاكتشافات العلمية الحديثة": [
+        {
+          "رقم": 21,
+          "سؤال": "ما اسم المركبة الفضائية التي أطلقتها ناسا في 2024 لاستكشاف قمر يوروبا؟",
+          "جواب": "كليبر"
+        }
+      ],
+      "أسئلة عن الابتكارات التكنولوجية الحديثة": [
+        {
+          "رقم": 31,
+          "سؤال": "ما اسم التقنية التي تُستخدم لتوفير سرعات إنترنت عالية في الهواتف الحديثة؟",
+          "جواب": "5G"
+        }
+      ],
+      "questions": [
+        {
+          "question": "ما معنى CPU؟",
+          "answer": "وحدة المعالجة المركزية"
+        },
+        {
+          "question": "ما اختصار RAM؟",
+          "answer": "ذاكرة الوصول العشوائي"
+        },
+        {
+          "question": "ما اختصار ROM؟",
+          "answer": "ذاكرة القراءة فقط"
+        },
+        {
+          "question": "ما اختصار HTTP؟",
+          "answer": "بروتوكول نقل النص"
+        },
+        {
+          "question": "ما اختصار HTML؟",
+          "answer": "لغة توصيف النصوص"
+        },
+        {
+          "question": "ما اختصار LAN؟",
+          "answer": "الشبكة المحلية"
+        },
+        {
+          "question": "ما اختصار DNS؟",
+          "answer": "نظام أسماء النطاقات"
+        },
+        {
+          "question": "ما اختصار URL؟",
+          "answer": "محدد موقع الموارد"
+        },
+        {
+          "question": "ما وظيفة BIOS؟",
+          "answer": "نظام الإقلاع"
+        },
+        {
+          "question": "ما اختصار GPU؟",
+          "answer": "وحدة معالجة الرسوميات"
+        }
+      ]
+    }
+  }
+}
